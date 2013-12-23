@@ -12,7 +12,6 @@ $(document).ajaxError(function(event, request, settings) {
     $('#busy').hide();
     alert('Error accessing the server');
 });
-
 function generateCalendar(events) {
     var wrapper  = $('#custom-inner'),
         custom   = $('#custom-content-reveal'),
