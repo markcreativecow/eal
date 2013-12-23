@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/calendario.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <div id="header" class="header">
+            <div id="logo">
+                <img src="img/logo.png" />
+            </div>
+            <div id="title">
+                <img src="img/title.png" />
+            </div>
+        </div>
+        <div id="wrapper">
+            <div class="custom-calendar-wrap">
+                <div id="custom-inner" class="custom-inner">
+                    <div class="custom-header clearfix">
+                        <nav>
+                            <span id="custom-prev" class="custom-prev"></span>
+                            <span id="custom-next" class="custom-next"></span>
+                        </nav>
+                        <h2 id="custom-month" class="custom-month"></h2>
+                        <h3 id="custom-year" class="custom-year"></h3>
+                    </div>
+                    <div id="calendar" class="fc-calendar-container"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <ul class="tabs">
+                <li class="active">
+                    <a href="index.html">
+                        <img src="img/tabs/home-active.png" />
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="eventslist.html">
+                        <img src="img/tabs/viewall.png" />
+                        <p>View All</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showMoreOverlay();return false;">
+                        <img src="img/tabs/more.png" />
+                        <p>More</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showShareOverlay();return false;">
+                        <img src="img/tabs/share.png" />
+                        <p>Share</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="busy">
+            <img src="img/loading.gif" />
+            <p>LOADING</p>
+        </div>
+        <div id="moreOverlay" class="overlay">
+            <ul id="moreList"></ul>
+        </div>
+        <div id="shareOverlay" class="overlay">
+            <ul id="shareList"></ul>
+        </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/iscroll.js"></script>
+        <script src="js/touchswipe.js"></script>
+        <script src="js/calendario.js"></script>
+        <script src="js/core.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

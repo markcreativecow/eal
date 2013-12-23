@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <div id="header" class="header">
+            <div id="logo">
+                <img src="img/logo.png" />
+            </div>
+            <div id="title">
+                <img src="img/title.png" />
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <ul class="tabs">
+                <li>
+                    <a href="index.html">
+                        <img src="img/tabs/home.png" />
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="eventslist.html">
+                        <img src="img/tabs/viewall-active.png" />
+                        <p>View All</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showMoreOverlay();return false;">
+                        <img src="img/tabs/more.png" />
+                        <p>More</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showShareOverlay();return false;">
+                        <img src="img/tabs/share.png" />
+                        <p>Share</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="busy">
+            <img src="img/loading.gif" />
+            <p>LOADING</p>
+        </div>
+        <div id="moreOverlay" class="overlay">
+            <ul id="moreList"></ul>
+        </div>
+        <div id="shareOverlay" class="overlay">
+            <ul id="shareList"></ul>
+        </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/iscroll.js"></script>
+        <script src="js/core.js"></script>
+        <script src="js/eventdetails.js"></script>
+    </body>
+</html>

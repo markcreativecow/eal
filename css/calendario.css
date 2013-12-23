@@ -1,0 +1,143 @@
+.fc-calendar-container {
+    position: relative;
+    height: 400px;
+    width: auto;
+}
+.fc-calendar {
+    background: #f6f6f6;
+    width: 100%;
+    height: 100%;
+}
+.fc-calendar .fc-head {
+    color: #666666;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    background: #eeeeee;
+    background: -moz-linear-gradient(top, #eeeeee 0%, #999999 90%, #999999 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(90%,#999999), color-stop(100%,#999999));
+    background: -webkit-linear-gradient(top, #eeeeee 0%,#999999 90%,#999999 100%);
+    background: -o-linear-gradient(top, #eeeeee 0%,#999999 90%,#999999 100%);
+    background: -ms-linear-gradient(top, #eeeeee 0%,#999999 90%,#999999 100%);
+    background: linear-gradient(to bottom, #eeeeee 0%,#999999 90%,#999999 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#999999',GradientType=0 );
+    height: 30px;
+    line-height: 30px;
+}
+.fc-calendar .fc-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: -moz-calc(100% - 30px);
+    height: -webkit-calc(100% - 30px);
+    height: calc(100% - 30px);
+    border: 1px solid #ddd;
+}
+.fc-calendar .fc-row {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.fc-four-rows .fc-row  {
+    height: 25%;
+}
+.fc-five-rows .fc-row  {
+    height: 20%;
+}
+.fc-six-rows .fc-row {
+    height: 16.66%;
+    height: -moz-calc(100%/6);
+    height: -webkit-calc(100%/6);
+    height: calc(100%/6);
+}
+.fc-calendar .fc-row > div,
+.fc-calendar .fc-head > div {
+    float: left;
+    height: 100%;
+    width:  14.28%; /* 100% / 7 */
+    width: -moz-calc(100%/7);
+    width: -webkit-calc(100%/7);
+    width: calc(100%/7);
+    position: relative;
+}
+/* IE 9 is rounding up the calc it seems */
+.ie9 .fc-calendar .fc-row > div,
+.ie9 .fc-calendar .fc-head > div {
+    width:  14.2%;
+}
+.fc-calendar .fc-row > div {
+    border-right: 1px solid #ddd;
+    padding: 4px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    cursor: pointer;
+}
+.fc-calendar .fc-head > div {
+    text-align: center;
+}
+.fc-calendar .fc-row > div:empty {
+    background: transparent;
+}
+.fc-calendar .fc-row > div > span.fc-date {
+    color: #686a6e;
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    text-shadow: 0 -1px 0 rgba(255,255,255,0.8);
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+    pointer-events: none;
+}
+.fc-calendar .fc-row > div > span.fc-weekday {
+    padding-left: 5px;
+    display: none;
+}
+.fc-calendar .fc-row > div.fc-content {
+    background: #0f4884;
+    background: -moz-radial-gradient(center, ellipse cover, #0f4884 0%, #07223e 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#0f4884), color-stop(100%,#07223e));
+    background: -webkit-radial-gradient(center, ellipse cover, #0f4884 0%,#07223e 100%);
+    background: -o-radial-gradient(center, ellipse cover, #0f4884 0%,#07223e 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #0f4884 0%,#07223e 100%);
+    background: radial-gradient(ellipse at center, #0f4884 0%,#07223e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f4884', endColorstr='#07223e',GradientType=1 );
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1);
+}
+.fc-calendar .fc-row > div.fc-content > span.fc-date {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.fc-calendar .fc-row > div.fc-today {
+    background-color: #DDDDDD;
+}
+.fc-calendar .fc-row > div.fc-out {
+    opacity: 0.6;
+}.fc-calendar .fc-row > div.fc-content div {
+    display: none;
+}
+.fc-calendar .fc-row > div:last-child,
+.fc-calendar .fc-head > div:last-child {
+    border-right: none;
+}
+.fc-calendar .fc-row:last-child {
+    border-bottom: none;
+}
+.fc-calendar .fc-row > div.fc-today.fc-content:hover:after{
+    color: #fff;
+}
+.fc-calendar .fc-row > div > div a,
+.fc-calendar .fc-row > div > div span {
+    display: none;
+    font-size: 22px;
+}
+@media screen and (max-width: 400px) {
+    .fc-calendar-container {
+        height: 300px;
+    }
+    .fc-calendar .fc-row > div > span.fc-date {
+        font-size: 15px;
+    }
+}
