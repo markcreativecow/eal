@@ -18,7 +18,7 @@ $(document).ajaxError(function(event, request, settings) {
     alert('Error accessing the server');
 });
 function openWindow(target) {
-    window.open(target, '_blank');
+    window.open(encodeURI(target), '_blank');
     return false;
 }
 function hideOverlays() {
