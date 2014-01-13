@@ -43,7 +43,7 @@ function generateCalendar(events) {
             var events = $('<div class="custom-content"></div>');
             events.append(content.html()).insertAfter(wrapper);
             scroll.refresh();
-			scroll.scrollTo(0, 300, 200);
+			scroll.scrollTo(0, 500, 200);
         }, 1000);
     }
     $('#calendar').swipe({
