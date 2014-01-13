@@ -18,7 +18,7 @@ $(document).ajaxError(function(event, request, settings) {
     alert('Error accessing the server');
 });
 function openWindow(target) {
-    window.open(encodeURI(target), '_blank', 'location=yes');
+    window.open(encodeURI(target), '_system');
 	return false;
 }
 function hideOverlays() {
@@ -40,7 +40,7 @@ function getMoreList() {
         $.each(data, function(index, item) {
             $('#moreList').append(
                 '<li class="icon ' + item.icon + '">' +
-                '<a href="' + item.link + '" target="_blank">' +
+                '<a href="' + item.link + '" onclick="openWindow(\'' + item.link + '\');">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
@@ -59,7 +59,7 @@ function getShareList() {
         $.each(data, function(index, item) {
             $('#shareList').append(
                 '<li class="icon ' + item.icon + '">' +
-                '<a href="' + item.link + '" target="_blank">' +
+                '<a href="' + item.link + '" onclick="openWindow(\'' + item.link + '\');">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
