@@ -24,7 +24,7 @@
     <preference name="prerendered-icon" value="true"/>
     <preference name="webviewbounce" value="false" />
     <preference name="stay-in-webview" value="false" />	
-    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+    <gap:plugin name="com.phonegap.plugins.childbrowser" />
     <!-- Default - this needs to be in the root directory -->
     <icon src="icon.png"/>	
     <!-- iOS -->
