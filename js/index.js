@@ -89,12 +89,7 @@ function getEventsList() {
                 // '<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
                 '<div class="clearfix"></div>';
             // If there is already an event on this particular day, append it on
-            if (events[date] != undefined) {
-                events[date] = events[date] + event;
-            // Other wise, just create it
-            } else {
-                events[date] = event;
-            }
+			events[date] = event;
             $('#events-list').append(
                 '<li><a href="eventdetails.html?id=' + item.id + '">' +
                 '<h2>' + item.name + '</h2>' +
