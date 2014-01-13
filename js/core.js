@@ -19,7 +19,6 @@ $(document).ajaxError(function(event, request, settings) {
 });
 function openWindow(target) {
     window.open(encodeURI(target), '_blank', 'location=yes');
-    return false;
 }
 function hideOverlays() {
     $('.overlay').hide();
