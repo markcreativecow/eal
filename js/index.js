@@ -50,9 +50,11 @@ function generateCalendar(events) {
             if (direction == 'left') {
 				hideEvents();
 				cal.gotoNextMonth(updateMonthYear);
+				$(this).trigger('click');
             } else if (direction == 'right') {
 				hideEvents();
 				cal.gotoPreviousMonth(updateMonthYear);
+				$(this).trigger('click');
             }
         }
     });
