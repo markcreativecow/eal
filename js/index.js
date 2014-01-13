@@ -1,9 +1,9 @@
 var serviceURL = localStorage['serviceURL'];
-/* var scroll = new iScroll('wrapper', {
+var scroll = new iScroll('wrapper', {
     vScrollbar: false, 
     hScrollbar:false, 
     hScroll: false
-}); */
+});
 var item;
 $(window).load(function() {
     setTimeout(getEventsList, 100);
@@ -38,12 +38,12 @@ function generateCalendar(events) {
     function showEvents(content) {
         hideEvents();
         $('#busy').show();
-        // setTimeout(function(){
+        setTimeout(function(){
             $('#busy').hide();
             var events = $('<div class="custom-content"></div>');
             events.append(content.html()).insertAfter(wrapper);
-            // scroll.refresh();
-        // }, 1000);
+            scroll.refresh();
+        }, 1000);
 		window.scrollTo(0, 300);
     }
     $('#calendar').swipe({
@@ -86,7 +86,7 @@ function getEventsList() {
                 '<p class="custom-date"><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
                 '<p class="custom-time"><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p>' +
                 '<p class="custom-description"><span>Event Description:</span> ' + item.description + '</p></div>' +
-                '<a href="#" onclick="openWindow(\'' + item.link + '\');" class="btn" id="btn-register">Register</a>' +
+                '<a href="' + item.link + '" onclick="openWindow(\'' + item.link + '\');" class="btn" id="btn-register">Register</a>' +
                 // '<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
                 '<div class="clearfix"></div>';
             // If there is already an event on this particular day, append it on
@@ -106,8 +106,8 @@ function getEventsList() {
         });
         // Pass the events over to the generate calendar function
         generateCalendar(events);
-        /* setTimeout(function(){
+        setTimeout(function(){
             scroll.refresh();
-        }); */
+        });
     });
 }

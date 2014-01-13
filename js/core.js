@@ -1,10 +1,10 @@
 localStorage['serviceURL'] = 'http://creativecowstaging.co.uk/ealserver/';
 var serviceURL = localStorage['serviceURL'];
-/* var scroll = new iScroll('wrapper', {
+var scroll = new iScroll('wrapper', {
     vScrollbar: false, 
     hScrollbar:false, 
     hScroll: false
-}); */
+});
 var item;
 $(window).load(function() {
     setTimeout(getMoreList, 100);
@@ -19,6 +19,7 @@ $(document).ajaxError(function(event, request, settings) {
 });
 function openWindow(target) {
     window.open(encodeURI(target), '_blank', 'location=yes');
+	return false;
 }
 function hideOverlays() {
     $('.overlay').hide();
@@ -39,15 +40,15 @@ function getMoreList() {
         $.each(data, function(index, item) {
             $('#moreList').append(
                 '<li class="icon ' + item.icon + '">' +
-                '<a href="#" onclick="openWindow(\'' + item.link + '\');">' +
+                '<a href="' + item.link + '" onclick="openWindow(\'' + item.link + '\');">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
             );
         });
-        /* setTimeout(function(){
+        setTimeout(function(){
             scroll.refresh();
-        }); */
+        });
     });
 }
 function getShareList() {
@@ -64,8 +65,8 @@ function getShareList() {
                 '</a></li>'
             );
         });
-        /* setTimeout(function(){
+        setTimeout(function(){
             scroll.refresh();
-        }); */
+        });
     });
 }
