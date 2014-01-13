@@ -1,9 +1,9 @@
 var serviceURL = localStorage['serviceURL'];
-var scroll = new iScroll('wrapper', {
+/* var scroll = new iScroll('wrapper', {
     vScrollbar: false, 
     hScrollbar:false, 
     hScroll: false
-});
+}); */
 var item;
 $(window).load(function() {
     setTimeout(getEventsList, 100);
@@ -38,12 +38,13 @@ function generateCalendar(events) {
     function showEvents(content) {
         hideEvents();
         $('#busy').show();
-        setTimeout(function(){
+        // setTimeout(function(){
             $('#busy').hide();
             var events = $('<div class="custom-content"></div>');
             events.append(content.html()).insertAfter(wrapper);
-            scroll.refresh();
-        }, 1000);
+            // scroll.refresh();
+        // }, 1000);
+		window.scrollTo(0, 300);
     }
     $('#calendar').swipe({
         swipe:function(event, direction, distance, duration, fingerCount) {
@@ -105,8 +106,8 @@ function getEventsList() {
         });
         // Pass the events over to the generate calendar function
         generateCalendar(events);
-        setTimeout(function(){
+        /* setTimeout(function(){
             scroll.refresh();
-        });
+        }); */
     });
 }
