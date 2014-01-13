@@ -2,7 +2,8 @@ var serviceURL = localStorage['serviceURL'];
 var scroll = new iScroll('wrapper', {
     vScrollbar: true, 
     hScrollbar:false, 
-    hScroll: false
+    hScroll: false,
+	snap: true
 });
 var item;
 $(window).load(function() {
