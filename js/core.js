@@ -18,8 +18,8 @@ $(document).ajaxError(function(event, request, settings) {
     alert('Error accessing the server');
 });
 function openWindow(target) {
-    window.open(encodeURI(target), '_system');
-	return false;
+	var myURL = encodeURI(target);
+    window.open(myURL, '_system', 'location=yes');
 }
 function hideOverlays() {
     $('.overlay').hide();
@@ -40,7 +40,7 @@ function getMoreList() {
         $.each(data, function(index, item) {
             $('#moreList').append(
                 '<li class="icon ' + item.icon + '">' +
-                '<a href="' + item.link + '" onclick="window.plugins.childBrowser.openExternal(' + item.link + ');">' +
+                '<a href="#" onclick="openWindow(' + item.link + ');">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
@@ -59,7 +59,7 @@ function getShareList() {
         $.each(data, function(index, item) {
             $('#shareList').append(
                 '<li class="icon ' + item.icon + '">' +
-                '<a href="' + item.link + '" onclick="window.plugins.childBrowser.openExternal(' + item.link + ');">' +
+                '<a href="#" onclick="openWindow(' + item.link + ');">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'

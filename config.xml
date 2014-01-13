@@ -23,8 +23,6 @@
     <preference name="phonegap-version" value="2.9.0" />
     <preference name="prerendered-icon" value="true"/>
     <preference name="webviewbounce" value="false" />
-    <preference name="stay-in-webview" value="false" />	
-    <gap:plugin name="com.phonegap.plugins.childbrowser" />
     <!-- Default - this needs to be in the root directory -->
     <icon src="icon.png"/>	
     <!-- iOS -->
