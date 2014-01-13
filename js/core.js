@@ -40,7 +40,7 @@ function getMoreList() {
         $.each(data, function(index, item) {
             $('#moreList').append(
                 '<li class="icon ' + item.icon + '">' +
-                '<a href="#" onclick="window.open(\'http://www.wikipedia.org\',\'_system\',\'location=yes\');">' +
+                '<a href="#" onclick="window.open(\'' + item.link + '\',\'_system\',\'location=yes\');">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
@@ -59,7 +59,7 @@ function getShareList() {
         $.each(data, function(index, item) {
             $('#shareList').append(
                 '<li class="icon ' + item.icon + '">' +
-                '<a href="#" onclick="window.open(\'http://www.wikipedia.org\',\'_system\',\'location=yes\');">' +
+                '<a href="#" onclick="window.open(\'' + item.link + '\',\'_system\',\'location=yes\');">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
