@@ -60,7 +60,8 @@ function generateCalendar(events) {
             } else if (direction == 'right') {
                 previousMonth();
             }
-        }
+        },
+		threshold:200
     });
     $('#custom-next').on('click', function() {
         nextMonth();
