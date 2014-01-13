@@ -45,30 +45,25 @@ function generateCalendar(events) {
             scroll.refresh();
         }, 1000);
     }
-    function previousMonth() {
-        hideEvents();
-        cal.gotoPreviousMonth(updateMonthYear);
-    }
-    function nextMonth() {
-        hideEvents();
-        cal.gotoNextMonth(updateMonthYear);
-    }
     $('#calendar').swipe({
         swipe:function(event, direction, distance, duration, fingerCount) {
             if (direction == 'left') {
-                nextMonth();
+				hideEvents();
+				cal.gotoNextMonth(updateMonthYear);
             } else if (direction == 'right') {
-                previousMonth();
+				hideEvents();
+				cal.gotoPreviousMonth(updateMonthYear);
             }
-        },
-		threshold:200
+        }
     });
-    $('#custom-next').on('click', function() {
-        nextMonth();
-    });
-    $('#custom-prev').on('click', function() {
-        previousMonth();
-    });
+    $( '#custom-next' ).on('click', function() {
+		hideEvents();
+		cal.gotoNextMonth(updateMonthYear);
+	});
+	$( '#custom-prev' ).on('click', function() {
+		hideEvents();
+		cal.gotoPreviousMonth(updateMonthYear);
+	});
 }
 var events = {};
 var date = '';
