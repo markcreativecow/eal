@@ -1,6 +1,6 @@
 var serviceURL = localStorage['serviceURL'];
 var scroll = new iScroll('wrapper', {
-    vScrollbar: false, 
+    vScrollbar: true, 
     hScrollbar:false, 
     hScroll: false
 });
@@ -44,9 +44,6 @@ function generateCalendar(events) {
             events.append(content.html()).insertAfter(wrapper);
             scroll.refresh();
         }, 1000);
-		setTimeout(function() {
-			scroll.scrollTo(0, 1500, 200);
-		}, 1000)
     }
     $('#calendar').swipe({
         swipe:function(event, direction, distance, duration, fingerCount) {

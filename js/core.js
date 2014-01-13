@@ -1,7 +1,7 @@
 localStorage['serviceURL'] = 'http://creativecowstaging.co.uk/ealserver/';
 var serviceURL = localStorage['serviceURL'];
 var scroll = new iScroll('wrapper', {
-    vScrollbar: false, 
+    vScrollbar: true, 
     hScrollbar:false, 
     hScroll: false
 });
