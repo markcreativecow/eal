@@ -43,8 +43,10 @@ function generateCalendar(events) {
             var events = $('<div class="custom-content"></div>');
             events.append(content.html()).insertAfter(wrapper);
             scroll.refresh();
-			scroll.scrollTo(0, 500, 200);
         }, 1000);
+		setTimeout(function() {
+			scroll.scrollTo(0, 1500, 200);
+		}, 1000)
     }
     $('#calendar').swipe({
         swipe:function(event, direction, distance, duration, fingerCount) {
