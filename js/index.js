@@ -68,6 +68,7 @@ function generateCalendar(events) {
 	});
 }
 var events = {};
+var date = '';
 function getEventsList() {
     // Hode the loader icon
     $('#busy').show();
@@ -78,7 +79,7 @@ function getEventsList() {
         // Loop through our JSON results
         $.each(data, function(index, item) {
             // Format the date as MM-DD-YYYY for use with Calendario plugin
-            var date = moment.unix(item.from).format('MM-DD-YYYY');
+            date = moment.unix(item.from).format('MM-DD-YYYY');
             // Create the HTML for the event
             var event = '<div class="custom-event"><h4>Event Details:</h4><p class="custom-location"><span>Location:</span> ' + item.name + '</p>' +
                 '<p class="custom-date"><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
@@ -88,7 +89,7 @@ function getEventsList() {
                 // '<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
                 '<div class="clearfix"></div>';
             // If there is already an event on this particular day, append it on
-            if (events[date] != undefined) {
+            if (events[date]) {
                 events[date] = events[date] + event;
             // Other wise, just create it
             } else {
