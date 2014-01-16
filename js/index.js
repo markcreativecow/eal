@@ -18,8 +18,9 @@ function generateCalendar(events) {
         calendar = $('#calendar'),
         cal      = calendar.calendario({
             onDayClick: function(el, content) {
-				alert(content);
-				showEvents(content);
+				if (content.length) {
+					showEvents(content);
+				}
             },
             caldata: events,
             displayWeekAbbr: true
@@ -35,6 +36,7 @@ function generateCalendar(events) {
         $('.custom-content').remove();
     }
     function showEvents(content) {
+		alert(content.html());
         hideEvents();
         $('#busy').show();
         setTimeout(function(){
@@ -98,6 +100,7 @@ function getEventsList() {
             // If there is already an event on this particular day, append it on
 			events[date] = event;
         });
+		console.log(events);
         // Pass the events over to the generate calendar function
         generateCalendar(events);
         setTimeout(function(){
