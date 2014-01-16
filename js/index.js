@@ -46,9 +46,9 @@ function generateCalendar(events) {
 				setTimeout(function(){
 					var pos = $('#custom-inner').height();
 					scroll.scrollTo(0, -pos);
-				}, 100);
-			}, 100);
-        }, 100);
+				});
+			});
+        });
     }
     $('#calendar').swipe({
         swipe:function(event, direction, distance, duration, fingerCount) {
@@ -56,24 +56,30 @@ function generateCalendar(events) {
 				hideEvents();
 				cal.gotoNextMonth(updateMonthYear);
 				setTimeout(function(){
-					$('#calendar').click();
-				}, 100);
+					scroll.refresh();
+				});
             } else if (direction == 'right') {
 				hideEvents();
 				cal.gotoPreviousMonth(updateMonthYear);
 				setTimeout(function(){
-					$('#calendar').click();
-				}, 100);
+					scroll.refresh();
+				});
             }
         }
     });
     $('#custom-next').on('touchstart', function() {
 		hideEvents();
 		cal.gotoNextMonth(updateMonthYear);
+		setTimeout(function(){
+			scroll.refresh();
+        });
 	});
 	$('#custom-prev').on('touchstart', function() {
 		hideEvents();
 		cal.gotoPreviousMonth(updateMonthYear);
+		setTimeout(function(){
+			scroll.refresh();
+        });
 	});
 }
 var events = {};
