@@ -67,7 +67,7 @@
 
 			var self = this;
 
-			this.$el.on( 'click.calendario', 'div.fc-row > div', function() {
+			this.$el.on( 'touchstart.calendario', 'div.fc-row > div', function() {
 
 				var $cell = $( this ),
 					idx = $cell.index(),

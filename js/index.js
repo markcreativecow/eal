@@ -18,8 +18,7 @@ function generateCalendar(events) {
         calendar = $('#calendar'),
         cal      = calendar.calendario({
             onDayClick: function(el, content) {
-				if (content.length) {					
-					alert(content.length);
+				if (content.length) {
 					showEvents(content);
 				}
             },
@@ -57,13 +56,13 @@ function generateCalendar(events) {
 				hideEvents();
 				cal.gotoNextMonth(updateMonthYear);
 				setTimeout(function(){
-					$('#calendar').trigger('click');
+					$('#calendar').click();
 				}, 100);
             } else if (direction == 'right') {
 				hideEvents();
 				cal.gotoPreviousMonth(updateMonthYear);
 				setTimeout(function(){
-					$(this).trigger('click');
+					$('#calendar').click();
 				}, 100);
             }
         }
