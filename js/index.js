@@ -40,8 +40,7 @@ function generateCalendar(events) {
         $('#busy').show();
         setTimeout(function(){
             $('#busy').hide();
-            var dates = $('<div class="custom-content"></div>');
-            dates.append(content.html()).insertAfter(wrapper);
+            var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrapper);
 			setTimeout(function(){
 				scroll.refresh();
 				setTimeout(function(){
@@ -73,8 +72,7 @@ function generateCalendar(events) {
 		cal.gotoPreviousMonth(updateMonthYear);
 	});
 }
-var events = {};
-var date = '';
+var events = [];
 function getEventsList() {
     // Hode the loader icon
     $('#busy').show();
@@ -85,7 +83,7 @@ function getEventsList() {
         // Loop through our JSON results
         $.each(data, function(index, item) {
             // Format the date as MM-DD-YYYY for use with Calendario plugin
-            date = moment.unix(item.from).format('MM-DD-YYYY');
+            var date = moment.unix(item.from).format('MM-DD-YYYY');
             // Create the HTML for the event
             var event = '<div class="custom-event"><h4>Event Details:</h4><p class="custom-location"><span>Location:</span> ' + item.name + '</p>' +
                 '<p class="custom-date"><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
@@ -95,12 +93,7 @@ function getEventsList() {
                 // '<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
                 '<div class="clearfix"></div>';
             // If there is already an event on this particular day, append it on
-            if (events[date]) {
-                events[date] = events[date] + event;
-            // Other wise, just create it
-            } else {
-                events[date] = event;
-            }
+			events[date] = event;
             $('#events-list').append(
                 '<li><a href="eventdetails.html?id=' + item.id + '">' +
                 '<h2>' + item.name + '</h2>' +
