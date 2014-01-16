@@ -72,7 +72,7 @@ function generateCalendar(events) {
 		cal.gotoPreviousMonth(updateMonthYear);
 	});
 }
-var events = [];
+var events = {};
 function getEventsList() {
     // Hode the loader icon
     $('#busy').show();
@@ -93,14 +93,7 @@ function getEventsList() {
                 // '<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
                 '<div class="clearfix"></div>';
             // If there is already an event on this particular day, append it on
-			events[date] = event;
-            $('#events-list').append(
-                '<li><a href="eventdetails.html?id=' + item.id + '">' +
-                '<h2>' + item.name + '</h2>' +
-                '<p><span>Location:</span> ' + item.location + '</p>' +
-                '<p><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + ' <span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p>' +
-                '</a></li>'
-            );
+			events.date = event;
         });
         // Pass the events over to the generate calendar function
         generateCalendar(events);
