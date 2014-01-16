@@ -42,7 +42,13 @@ function generateCalendar(events) {
             $('#busy').hide();
             var events = $('<div class="custom-content"></div>');
             events.append(content.html()).insertAfter(wrapper);
-            scroll.refresh();
+			setTimeout(function(){
+				var scroll = new iScroll('wrapper', {
+					vScrollbar: true, 
+					hScrollbar:false, 
+					hScroll: false
+				});
+			}, 1000);
         }, 1000);
     }
     $('#calendar').swipe({
