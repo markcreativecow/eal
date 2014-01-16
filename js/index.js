@@ -45,8 +45,9 @@ function generateCalendar(events) {
 			setTimeout(function(){
 				scroll.refresh();
 				setTimeout(function(){
-					scroll.scrollTo(0, -450);
-				});
+					var pos = $('#custom-inner').height();
+					scroll.scrollTo(0, -pos);
+				}, 100);
 			});
         });
     }
