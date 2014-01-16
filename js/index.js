@@ -45,11 +45,11 @@ function generateCalendar(events) {
 			setTimeout(function(){
 				scroll.refresh();
 				setTimeout(function(){
-					var pos = $('#custom-inner').height();
+					var pos = $('#custom-inner').height() - 50;
 					scroll.scrollTo(0, -pos);
 				}, 100);
-			});
-        });
+			}, 100);
+        }, 100);
     }
     $('#calendar').swipe({
         swipe:function(event, direction, distance, duration, fingerCount) {
