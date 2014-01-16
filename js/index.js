@@ -45,7 +45,7 @@ function generateCalendar(events) {
 			setTimeout(function(){
 				scroll.refresh();
 				setTimeout(function(){
-					var pos = $('#custom-inner').height() - 50;
+					var pos = parseInt($('#custom-inner').height());
 					scroll.scrollTo(0, -pos);
 				}, 100);
 			}, 100);
