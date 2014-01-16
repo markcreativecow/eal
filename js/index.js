@@ -40,12 +40,12 @@ function generateCalendar(events) {
         $('#busy').show();
         setTimeout(function(){
             $('#busy').hide();
-            var events = $('<div class="custom-content"></div>');
-            events.append(content.html()).insertAfter(wrapper);
+            var dates = $('<div class="custom-content"></div>');
+            dates.append(content.html()).insertAfter(wrapper);
 			setTimeout(function(){
 				scroll.refresh();
 				setTimeout(function(){
-					var pos = parseInt($('#custom-inner').height());
+					var pos = $('#custom-inner').height();
 					scroll.scrollTo(0, -pos);
 				}, 100);
 			}, 100);
