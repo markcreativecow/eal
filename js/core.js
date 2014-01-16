@@ -48,7 +48,7 @@ function getMoreList() {
         });
         setTimeout(function(){
             scroll.refresh();
-        }, 1000);
+        });
     });
 }
 function getShareList() {
@@ -67,6 +67,6 @@ function getShareList() {
         });
         setTimeout(function(){
             scroll.refresh();
-        }, 1000);
+        });
     });
 }

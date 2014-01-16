@@ -28,7 +28,7 @@ function getEvent() {
         });
         setTimeout(function(){
             scroll.refresh();
-        }, 1000);
+        });
     });
 }
 function getUrlVars() {

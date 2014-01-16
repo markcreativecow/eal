@@ -44,8 +44,12 @@ function generateCalendar(events) {
             events.append(content.html()).insertAfter(wrapper);
 			setTimeout(function(){
 				scroll.refresh();
-			}, 1000);
-        }, 1000);
+				setTimeout(function(){
+					var y = $(window).scrollTop();
+					$(window).scrollTop(y + 500);
+				});
+			});
+        });
     }
     $('#calendar').swipe({
         swipe:function(event, direction, distance, duration, fingerCount) {
@@ -109,6 +113,6 @@ function getEventsList() {
         generateCalendar(events);
         setTimeout(function(){
             scroll.refresh();
-        }, 1000);
+        });
     });
 }
