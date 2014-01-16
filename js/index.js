@@ -36,6 +36,7 @@ function generateCalendar(events) {
         $('.custom-content').remove();
     }
     function showEvents(content) {
+		alert(JSON.stringify(content));
         hideEvents();
         $('#busy').show();
         setTimeout(function(){
