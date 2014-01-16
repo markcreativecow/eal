@@ -43,12 +43,17 @@ function generateCalendar(events) {
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrapper);
 			setTimeout(function(){
-				scroll.refresh();
+				var myScroll = new iScroll('wrapper', {
+					vScrollbar: false,
+					hScrollbar: false,
+					hScroll: false,
+					snap: false
+				});
 				setTimeout(function(){
 					var pos = $('#custom-inner').height();
-					scroll.scrollTo(0, -pos);
-				});
-			});
+					myScroll.scrollTo(0, -pos);
+				}, 100);
+			}, 100);
         });
     }
     $('#calendar').swipe({
