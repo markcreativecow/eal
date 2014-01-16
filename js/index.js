@@ -93,7 +93,7 @@ function getEventsList() {
                 // '<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
                 '<div class="clearfix"></div>';
             // If there is already an event on this particular day, append it on
-			events.date = event;
+			events[date] = event;
         });
         // Pass the events over to the generate calendar function
         generateCalendar(events);
