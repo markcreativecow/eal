@@ -13,6 +13,7 @@ $(document).ajaxError(function(event, request, settings) {
     alert('Error accessing the server');
 });
 function generateCalendar(events) {
+	alert(events);
     var wrapper  = $('#custom-inner'),
         custom   = $('#custom-content-reveal'),
         calendar = $('#calendar'),
