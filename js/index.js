@@ -1,7 +1,7 @@
 var serviceURL = localStorage['serviceURL'];
 var scroll = new iScroll('wrapper', {
-    vScrollbar: true, 
-    hScrollbar:false, 
+    vScrollbar: false,
+    hScrollbar: false,
     hScroll: false
 });
 var item;
@@ -43,11 +43,7 @@ function generateCalendar(events) {
             var events = $('<div class="custom-content"></div>');
             events.append(content.html()).insertAfter(wrapper);
 			setTimeout(function(){
-				var scroll = new iScroll('wrapper', {
-					vScrollbar: true, 
-					hScrollbar:false, 
-					hScroll: false
-				});
+				scroll.refresh();
 			}, 1000);
         }, 1000);
     }
@@ -113,6 +109,6 @@ function getEventsList() {
         generateCalendar(events);
         setTimeout(function(){
             scroll.refresh();
-        });
+        }, 1000);
     });
 }

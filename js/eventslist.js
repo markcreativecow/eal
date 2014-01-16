@@ -1,7 +1,7 @@
 var serviceURL = localStorage['serviceURL'];
 var scroll = new iScroll('wrapper', {
-    vScrollbar: true, 
-    hScrollbar:false, 
+    vScrollbar: false,
+    hScrollbar: false,
     hScroll: false
 });
 var item;
@@ -26,6 +26,6 @@ function getEventsList() {
         });
         setTimeout(function(){
             scroll.refresh();
-        });
+        }, 1000);
     });
 }
