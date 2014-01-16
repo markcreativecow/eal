@@ -13,15 +13,13 @@ $(document).ajaxError(function(event, request, settings) {
     alert('Error accessing the server');
 });
 function generateCalendar(events) {
-	alert(events);
     var wrapper  = $('#custom-inner'),
         custom   = $('#custom-content-reveal'),
         calendar = $('#calendar'),
         cal      = calendar.calendario({
             onDayClick: function(el, content) {
-                if (content.length > 0) {
-                    showEvents(content);
-                }
+				alert(content);
+				showEvents(content);
             },
             caldata: events,
             displayWeekAbbr: true
@@ -77,7 +75,7 @@ function generateCalendar(events) {
 		cal.gotoPreviousMonth(updateMonthYear);
 	});
 }
-var events = [];
+var events = {};
 function getEventsList() {
     // Hode the loader icon
     $('#busy').show();
@@ -90,17 +88,15 @@ function getEventsList() {
             // Format the date as MM-DD-YYYY for use with Calendario plugin
             var date = moment.unix(item.from).format('MM-DD-YYYY');
             // Create the HTML for the event
-            var event = {
-				date : '<div class="custom-event"><h4>Event Details:</h4><p class="custom-location"><span>Location:</span> ' + item.name + '</p>' +
+            var event = '<div class="custom-event"><h4>Event Details:</h4><p class="custom-location"><span>Location:</span> ' + item.name + '</p>' +
 					'<p class="custom-date"><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
 					'<p class="custom-time"><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p>' +
 					'<p class="custom-description"><span>Event Description:</span> ' + item.description + '</p></div>' +
 					'<a href="#" onclick="window.open(\'' + item.link + '\',\'_system\',\'location=yes\');" class="btn" id="btn-register">Register</a>' +
 					// '<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
-					'<div class="clearfix"></div>'
-			};
+					'<div class="clearfix"></div>';
             // If there is already an event on this particular day, append it on
-			events.push(event);
+			events[date] = event;
         });
         // Pass the events over to the generate calendar function
         generateCalendar(events);
