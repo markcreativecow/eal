@@ -5,12 +5,9 @@ var scroll = new iScroll('wrapper', {
     hScroll: false,
 	snap: false
 });
-var item;
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 $(window).load(function() {
     setTimeout(getEventsList, 100);
-});
-$(window).on('touchmove', function(e){
-	e.preventDefault();
 });
 $(document).ajaxError(function(event, request, settings) {
     $('#busy').hide();
@@ -55,7 +52,7 @@ function generateCalendar(events) {
         }, 10);
     }
     $('#calendar').swipe({
-        swipe:function(event, direction, distance, duration, fingerCount) {
+        swipe: function(event, direction, distance, duration, fingerCount) {
             if (direction == 'left') {
 				hideEvents();
 				cal.gotoNextMonth(updateMonthYear);
@@ -69,7 +66,8 @@ function generateCalendar(events) {
 					scroll.refresh();
 				}, 10);
             }
-        }
+        },
+		threshold: 0
     });
     $('#custom-next').on('touchstart', function() {
 		hideEvents();
@@ -86,6 +84,7 @@ function generateCalendar(events) {
         }, 10);
 	});
 }
+var item;
 var events = {};
 function getEventsList() {
     // Hode the loader icon

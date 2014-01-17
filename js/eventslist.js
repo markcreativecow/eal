@@ -5,7 +5,6 @@ var scroll = new iScroll('wrapper', {
     hScroll: false,
 	snap: false
 });
-var item;
 $(window).load(function() {
     setTimeout(getEventsList, 100);
 });
@@ -13,6 +12,7 @@ $(document).ajaxError(function(event, request, settings) {
     $('#busy').hide();
     alert('Error accessing the server');
 });
+var item;
 function getEventsList() {
     $('#busy').show();
     $.getJSON(serviceURL + 'api/rest/events/format/json', function(data) {

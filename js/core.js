@@ -6,7 +6,6 @@ var scroll = new iScroll('wrapper', {
     hScroll: false,
 	snap: false
 });
-var item;
 $(window).load(function() {
     setTimeout(getMoreList, 100);
     setTimeout(getShareList, 100);
@@ -33,6 +32,7 @@ function showShareOverlay() {
     hideOverlays();
     $('#shareOverlay').show();
 }
+var item;
 function getMoreList() {
     $('#busy').show();
     $.getJSON(serviceURL + 'api/rest/info/format/json', function(data) {

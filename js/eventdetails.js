@@ -5,7 +5,6 @@ var scroll = new iScroll('wrapper', {
     hScroll: false,
 	snap: false
 });
-var item;
 var id = getUrlVars()["id"];
 $(window).load(function() {
     setTimeout(getEvent, 100);
@@ -14,6 +13,7 @@ $(document).ajaxError(function(event, request, settings) {
     $('#busy').hide();
     alert("Error accessing the server");
 });
+var item;
 function getEvent() {
     $('#busy').show();
     $.getJSON(serviceURL + 'api/rest/event/id/' + id + '/format/json', function(data) {
