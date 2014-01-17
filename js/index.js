@@ -5,6 +5,7 @@ var scroll = new iScroll('wrapper', {
     hScroll: false
 });
 $(window).load(function() {
+	alert($('#wrapper').height());
     setTimeout(getEventsList, 100);
 });
 $(document).ajaxError(function(event, request, settings) {
@@ -35,21 +36,17 @@ function generateCalendar(events) {
         $('.custom-content').remove();
     }
     function showEvents(content) {
-		scroll.destroy();
         hideEvents();
         $('#busy').show();
         setTimeout(function(){
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrap);
 			setTimeout(function(){
-				var scroll = new iScroll('wrapper', {
-					vScrollbar: false,
-					hScrollbar: false,
-					hScroll: false
-				});
+				scroll.refresh();
 				setTimeout(function(){
 					var pos = $('#custom-inner').height();
 					scroll.scrollTo(0, -pos);
+					alert($('#wrapper').height());
 				}, 10);
 			}, 10);
         }, 10);

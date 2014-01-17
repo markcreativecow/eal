@@ -62,7 +62,6 @@ body {
     width: 100%;
 }
 #wrapper {
-	background-color: #FF0000;
     bottom: 50px;
     overflow: auto;
     position: absolute;
