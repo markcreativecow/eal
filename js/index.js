@@ -41,12 +41,12 @@ function generateCalendar(events) {
         setTimeout(function(){
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrap);
+			alert($('.custom-content').height());
 			setTimeout(function(){
 				scroll.refresh();
 				setTimeout(function(){
 					var pos = $('#custom-inner').height();
 					scroll.scrollTo(0, -pos);
-					alert($('#wrapper').height());
 				}, 10);
 			}, 10);
         }, 10);
