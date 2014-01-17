@@ -5,7 +5,6 @@ var scroll = new iScroll('wrapper', {
     hScroll: false
 });
 $(window).load(function() {
-	alert($('#wrapper').height());
     setTimeout(getEventsList, 100);
 });
 $(document).ajaxError(function(event, request, settings) {
@@ -41,12 +40,13 @@ function generateCalendar(events) {
         setTimeout(function(){
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrap);
-			alert($('.custom-content').height());
+			$('#wrapper').height($('.custom-content').height() + $('#wrapper').height());
 			setTimeout(function(){
 				scroll.refresh();
 				setTimeout(function(){
 					var pos = $('#custom-inner').height();
 					scroll.scrollTo(0, -pos);
+					alert($('#wrapper').height());
 				}, 10);
 			}, 10);
         }, 10);
