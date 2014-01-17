@@ -10,6 +10,7 @@ $(window).load(function() {
     setTimeout(getShareList, 100);
     $('#wrapper, #header').click(function() {
         hideOverlays();
+		return false;
     });
 });
 $(document).ajaxError(function(event, request, settings) {
