@@ -40,11 +40,16 @@ function generateCalendar(events) {
         setTimeout(function(){
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrap);
-			var height = $('.custom-content').height() + $('#wrapper').height();
+			scroll.destroy();
 			setTimeout(function(){
+				var height = $('.custom-content').height() + $('#wrapper').height();
 				$('#wrapper').height(height);
 				setTimeout(function(){
-					scroll.refresh();
+					var scroll = new iScroll('wrapper', {
+						vScrollbar: false,
+						hScrollbar: false,
+						hScroll: false
+					});
 					var pos = $('#custom-inner').height();
 					scroll.scrollTo(0, -pos);
 				}, 10);
