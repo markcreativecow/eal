@@ -8,7 +8,8 @@ var scroll = new iScroll('wrapper', {
 $(window).load(function() {
     setTimeout(getMoreList, 100);
     setTimeout(getShareList, 100);
-    $('#wrapper, #header').click(function() {
+    $('#wrapper, #header').click(function(event) {
+		event.preventDefault();
         hideOverlays();
 		return false;
     });
