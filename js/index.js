@@ -5,7 +5,6 @@ var scroll = new iScroll('wrapper', {
     hScroll: false,
 	snap: false
 });
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 $(window).load(function() {
     setTimeout(getEventsList, 100);
 });
@@ -56,12 +55,14 @@ function generateCalendar(events) {
             if (direction == 'left') {
 				hideEvents();
 				cal.gotoNextMonth(updateMonthYear);
+				$(this).click();
 				setTimeout(function(){
 					scroll.refresh();
 				}, 10);
             } else if (direction == 'right') {
 				hideEvents();
 				cal.gotoPreviousMonth(updateMonthYear);
+				$(this).click();
 				setTimeout(function(){
 					scroll.refresh();
 				}, 10);
