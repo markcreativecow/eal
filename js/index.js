@@ -9,6 +9,9 @@ var item;
 $(window).load(function() {
     setTimeout(getEventsList, 100);
 });
+$(window).on('touchmove', function(e){
+	e.preventDefault();
+});
 $(document).ajaxError(function(event, request, settings) {
     $('#busy').hide();
     alert('Error accessing the server');
@@ -43,18 +46,13 @@ function generateCalendar(events) {
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrapper);
 			setTimeout(function(){
-				var myScroll = new iScroll('wrapper', {
-					vScrollbar: false,
-					hScrollbar: false,
-					hScroll: false,
-					snap: false
-				});
+				scroll.refresh();
 				setTimeout(function(){
 					var pos = $('#custom-inner').height();
-					myScroll.scrollTo(0, -pos);
-				}, 100);
-			}, 100);
-        });
+					scroll.scrollTo(0, -pos);
+				}, 10);
+			}, 10);
+        }, 10);
     }
     $('#calendar').swipe({
         swipe:function(event, direction, distance, duration, fingerCount) {
@@ -63,13 +61,13 @@ function generateCalendar(events) {
 				cal.gotoNextMonth(updateMonthYear);
 				setTimeout(function(){
 					scroll.refresh();
-				});
+				}, 10);
             } else if (direction == 'right') {
 				hideEvents();
 				cal.gotoPreviousMonth(updateMonthYear);
 				setTimeout(function(){
 					scroll.refresh();
-				});
+				}, 10);
             }
         }
     });
@@ -78,14 +76,14 @@ function generateCalendar(events) {
 		cal.gotoNextMonth(updateMonthYear);
 		setTimeout(function(){
 			scroll.refresh();
-        });
+        }, 10);
 	});
 	$('#custom-prev').on('touchstart', function() {
 		hideEvents();
 		cal.gotoPreviousMonth(updateMonthYear);
 		setTimeout(function(){
 			scroll.refresh();
-        });
+        }, 10);
 	});
 }
 var events = {};
@@ -102,7 +100,7 @@ function getEventsList() {
             var date = moment.unix(item.from).format('MM-DD-YYYY');
             // Create the HTML for the event
             var event = '<div class="custom-event"><h4>Event Details:</h4><p class="custom-location"><span>Location:</span> ' + item.name + '</p>' +
-					'<p class="custom-date"><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
+					'<p class="custom-date"><sp an>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
 					'<p class="custom-time"><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p>' +
 					'<p class="custom-description"><span>Event Description:</span> ' + item.description + '</p></div>' +
 					'<a href="#" onclick="window.open(\'' + item.link + '\',\'_system\',\'location=yes\');" class="btn" id="btn-register">Register</a>' +
