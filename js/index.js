@@ -46,18 +46,10 @@ function generateCalendar(events) {
     }
     $('#calendar').swipe({
 		swipeLeft: function(event, direction, distance, duration, fingerCount) {
-			cal.gotoNextMonth(updateMonthYear);
-			hideEvents();
-			setTimeout(function(){
-				scroll.refresh();
-			}, 0);
+			$('#custom-next').trigger('touchstart');
 		},
 		swipeRight: function(event, direction, distance, duration, fingerCount) {
-			cal.gotoPreviousMonth(updateMonthYear);
-			hideEvents();
-			setTimeout(function(){
-				scroll.refresh();
-			}, 0);
+			$('#custom-prev').trigger('touchstart');
 		},
 		threshold: 0
     });
