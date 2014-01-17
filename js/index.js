@@ -53,16 +53,14 @@ function generateCalendar(events) {
     $('#calendar').swipe({
         swipe: function(event, direction, distance, duration, fingerCount) {
             if (direction == 'left') {
-				hideEvents();
 				cal.gotoNextMonth(updateMonthYear);
-				$(this).click();
+				hideEvents();
 				setTimeout(function(){
 					scroll.refresh();
 				}, 10);
             } else if (direction == 'right') {
-				hideEvents();
 				cal.gotoPreviousMonth(updateMonthYear);
-				$(this).click();
+				hideEvents();
 				setTimeout(function(){
 					scroll.refresh();
 				}, 10);
