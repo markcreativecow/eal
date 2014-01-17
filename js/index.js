@@ -12,7 +12,7 @@ $(document).ajaxError(function(event, request, settings) {
     alert('Error accessing the server');
 });
 function generateCalendar(events) {
-    var wrapper  = $('#custom-inner'),
+    var wrap  = $('#custom-inner'),
         custom   = $('#custom-content-reveal'),
         calendar = $('#calendar'),
         cal      = calendar.calendario({
@@ -35,13 +35,18 @@ function generateCalendar(events) {
         $('.custom-content').remove();
     }
     function showEvents(content) {
+		scroll.destroy();
         hideEvents();
         $('#busy').show();
         setTimeout(function(){
             $('#busy').hide();
-            var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrapper);
+            var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrap);
 			setTimeout(function(){
-				scroll.refresh();
+				var scroll = new iScroll('wrapper', {
+					vScrollbar: false,
+					hScrollbar: false,
+					hScroll: false
+				});
 				setTimeout(function(){
 					var pos = $('#custom-inner').height();
 					scroll.scrollTo(0, -pos);
