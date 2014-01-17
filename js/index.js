@@ -40,12 +40,13 @@ function generateCalendar(events) {
         setTimeout(function(){
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrapper);
-			scroll.destroy();
-			var scroll = new iScroll('wrapper', {
-				vScrollbar: false,
-				hScrollbar: false,
-				hScroll: false
-			});
+			setTimeout(function(){
+				scroll.refresh();
+				setTimeout(function(){
+					var pos = $('#custom-inner').height();
+					scroll.scrollTo(0, -pos);
+				}, 10);
+			}, 10);
         }, 10);
     }
     $('#calendar').swipe({
