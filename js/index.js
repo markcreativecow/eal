@@ -2,8 +2,7 @@ var serviceURL = localStorage['serviceURL'];
 var scroll = new iScroll('wrapper', {
     vScrollbar: false,
     hScrollbar: false,
-    hScroll: false,
-	snap: false
+    hScroll: false
 });
 $(window).load(function() {
     setTimeout(getEventsList, 100);
@@ -41,31 +40,29 @@ function generateCalendar(events) {
         setTimeout(function(){
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrapper);
-			setTimeout(function(){
-				scroll.refresh();
-				setTimeout(function(){
-					var pos = $('#custom-inner').height();
-					scroll.scrollTo(0, -pos);
-				}, 10);
-			}, 10);
+			scroll.destroy();
+			var scroll = new iScroll('wrapper', {
+				vScrollbar: false,
+				hScrollbar: false,
+				hScroll: false
+			});
         }, 10);
     }
     $('#calendar').swipe({
-        swipe: function(event, direction, distance, duration, fingerCount) {
-            if (direction == 'left') {
-				cal.gotoNextMonth(updateMonthYear);
-				hideEvents();
-				setTimeout(function(){
-					scroll.refresh();
-				}, 10);
-            } else if (direction == 'right') {
-				cal.gotoPreviousMonth(updateMonthYear);
-				hideEvents();
-				setTimeout(function(){
-					scroll.refresh();
-				}, 10);
-            }
-        },
+		swipeLeft: function(event, direction, distance, duration, fingerCount) {
+			cal.gotoNextMonth(updateMonthYear);
+			hideEvents();
+			setTimeout(function(){
+				scroll.refresh();
+			}, 10);
+		},
+		swipeRight: function(event, direction, distance, duration, fingerCount) {
+			cal.gotoPreviousMonth(updateMonthYear);
+			hideEvents();
+			setTimeout(function(){
+				scroll.refresh();
+			}, 10);
+		},
 		threshold: 0
     });
     $('#custom-next').on('touchstart', function() {

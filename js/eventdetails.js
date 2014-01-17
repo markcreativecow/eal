@@ -2,8 +2,7 @@ var serviceURL = localStorage['serviceURL'];
 var scroll = new iScroll('wrapper', {
     vScrollbar: false,
     hScrollbar: false,
-    hScroll: false,
-	snap: false
+    hScroll: false
 });
 var id = getUrlVars()["id"];
 $(window).load(function() {
