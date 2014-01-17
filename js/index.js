@@ -44,20 +44,14 @@ function generateCalendar(events) {
 			}, 500);
         }, 0);
     }
-    $('#calendar').swipe({
+    $('body').swipe({
 		swipeLeft: function(event, direction, distance, duration, fingerCount) {
 			hideEvents();
 			cal.gotoNextMonth(updateMonthYear);
-			setTimeout(function(){
-				$('#calendar').trigger('touchstart');
-			}, 500);
 		},
 		swipeRight: function(event, direction, distance, duration, fingerCount) {
 			hideEvents();
 			cal.gotoPreviousMonth(updateMonthYear);
-			setTimeout(function(){
-				$('#calendar').trigger('touchstart');
-			}, 500);
 		},
 		threshold: 0
     });
