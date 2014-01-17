@@ -40,19 +40,13 @@ function generateCalendar(events) {
         setTimeout(function(){
             $('#busy').hide();
             var dates = $('<div class="custom-content">' + content.html() + '</div>').insertAfter(wrap);
-			scroll.detroy();
-			scroll = null;
 			setTimeout(function(){
-				var height = $('.custom-content').height() + $('#wrapper').height();
-				$('#wrapper').height(height);
+				scroll.refresh();
 				setTimeout(function(){
-					var scroll = new iScroll('wrapper', {
-						vScrollbar: false,
-						hScrollbar: false,
-						hScroll: false
-					});
-				}, 500);
-			}, 0);
+					var pos = $('#custom-inner').height();
+					scroll.scrollTo(0, -pos);
+				}, 0);
+			}, 500);
         }, 0);
     }
     $('#calendar').swipe({
@@ -61,14 +55,14 @@ function generateCalendar(events) {
 			hideEvents();
 			setTimeout(function(){
 				scroll.refresh();
-			}, 500);
+			}, 0);
 		},
 		swipeRight: function(event, direction, distance, duration, fingerCount) {
 			cal.gotoPreviousMonth(updateMonthYear);
 			hideEvents();
 			setTimeout(function(){
 				scroll.refresh();
-			}, 500);
+			}, 0);
 		},
 		threshold: 0
     });
@@ -77,14 +71,14 @@ function generateCalendar(events) {
 		cal.gotoNextMonth(updateMonthYear);
 		setTimeout(function(){
 			scroll.refresh();
-        }, 500);
+        }, 0);
 	});
 	$('#custom-prev').on('touchstart', function() {
 		hideEvents();
 		cal.gotoPreviousMonth(updateMonthYear);
 		setTimeout(function(){
 			scroll.refresh();
-        }, 500);
+        }, 0);
 	});
 }
 var item;
