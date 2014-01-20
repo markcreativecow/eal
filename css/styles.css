@@ -421,12 +421,6 @@ ul.tabs li.active a p {
     text-align: center;
     width: 100%;
 }
-.custom-header nav span.custom-prev:before {
-    content: '\25c2';
-}
-.custom-header nav span.custom-next:before {
-    content: '\25b8';
-}
 .custom-header nav span:hover:before {
     color: #495468;
 }
