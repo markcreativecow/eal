@@ -22,7 +22,7 @@ function getEventsList() {
                 '<h3 class="title">' + item.name + '</p>' +
                 '<p><span>Location:</span> ' + item.location + '</p>' +
                 '<p><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
-                '<p><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p></li>');
+                '<p><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p></a></li>');
         });
         setTimeout(function(){
             scroll.refresh();
