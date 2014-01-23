@@ -8,11 +8,13 @@ var scroll = new iScroll('wrapper', {
 $(window).load(function() {
     setTimeout(getMoreList, 100);
     setTimeout(getShareList, 100);
-    $('#wrapper, #header').click(function(e) {
-		e.preventDefault();
-        hideOverlays();
-		return false;
-    });
+	$('#wrapper, #header').click(function(e) {
+		if ($('.overlay').is(':visible')) {
+			e.preventDefault();
+			hideOverlays();
+			return false;
+		}
+	});
 });
 $(document).ajaxError(function(event, request, settings) {
     $('#busy').hide();

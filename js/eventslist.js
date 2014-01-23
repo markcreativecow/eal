@@ -18,11 +18,13 @@ function getEventsList() {
         $('#busy').hide();
         $('#eventsList li').remove();
         $.each(data, function(index, item) {
-            $('#eventsList').append('<li><a href="eventdetails.html?id=' + item.id + '">' +
-                '<h3 class="title">' + item.name + '</h3>' +
-                '<p><span>Location:</span> ' + item.location + '</p>' +
-                '<p><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
-                '<p><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p></a></li>');
+            $('#eventsList').append(
+				'<li><a href="eventdetails.html?id=' + item.id + '">' +
+					'<h3 class="title">' + item.name + '</h3>' +
+					'<p><span>Location:</span> ' + item.location + '</p>' +
+					'<p><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
+					'<p><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p>' +
+				'</a></li>');
         });
         setTimeout(function(){
             scroll.refresh();
