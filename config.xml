@@ -23,6 +23,7 @@
     <preference name="phonegap-version" value="3.1.0" />
     <preference name="prerendered-icon" value="true"/>
     <preference name="webviewbounce" value="false" />
+	<preference name="target-device" value="handset" />
     <!-- Default - this needs to be in the root directory -->
     <icon src="icon.png"/>	
     <!-- iOS -->	
