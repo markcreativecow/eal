@@ -20,18 +20,17 @@
     <preference name="fullscreen" value="true" />
     <preference name="ios-statusbarstyle" value="black-opaque"/>
     <preference name="orientation" value="portrait"/>
-    <preference name="phonegap-version" value="2.9.0" />
+    <preference name="phonegap-version" value="3.1.0" />
     <preference name="prerendered-icon" value="true"/>
     <preference name="webviewbounce" value="false" />
     <!-- Default - this needs to be in the root directory -->
     <icon src="icon.png"/>	
-    <!-- iOS -->
-	
+    <!-- iOS -->	
 	<icon gap:platform="ios" height="57" src="img/icons/ios/icon-57.png" width="57" />
 	<icon gap:platform="ios" height="72" src="img/icons/ios/icon-72.png" width="72" />
 	<icon gap:platform="ios" height="114" src="img/icons/ios/icon-57@2x.png" width="114" />
 	<icon gap:platform="ios" height="144" src="img/icons/ios/icon-72@2x.png" width="144" />
-	
+	<!-- iOS -->	
     <gap:splash src="img/icons/ios/Default.png" gap:platform="ios" width="320" height="480"/>
     <gap:splash src="img/icons/ios/Default@2x.png" gap:platform="ios" width="640" height="960"/>
     <gap:splash src="img/icons/ios/Default-568h@2x.png" gap:platform="ios" width="640" height="1136"/>
