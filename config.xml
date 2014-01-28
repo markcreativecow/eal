@@ -28,8 +28,11 @@
     <!-- iOS -->	
 	<icon gap:platform="ios" height="57" src="img/icons/ios/icon-57.png" width="57" />
 	<icon gap:platform="ios" height="72" src="img/icons/ios/icon-72.png" width="72" />
+	<icon gap:platform="ios" height="76" src="img/icons/ios/icon-76.png" width="76" />
 	<icon gap:platform="ios" height="114" src="img/icons/ios/icon-57@2x.png" width="114" />
+	<icon gap:platform="ios" height="120" src="img/icons/ios/icon-120.png" width="120" />
 	<icon gap:platform="ios" height="144" src="img/icons/ios/icon-72@2x.png" width="144" />
+	<icon gap:platform="ios" height="152" src="img/icons/ios/icon-152.png" width="152" />
 	<!-- iOS -->	
     <gap:splash src="img/icons/ios/Default.png" gap:platform="ios" width="320" height="480"/>
     <gap:splash src="img/icons/ios/Default@2x.png" gap:platform="ios" width="640" height="960"/>
