@@ -15,7 +15,7 @@
    	<feature name="http://api.phonegap.com/1.0/media"/>
    	<feature name="http://api.phonegap.com/1.0/network"/>
    	<feature name="http://api.phonegap.com/1.0/notification"/>
-    -->		
+    -->
     <preference name="detect-data-types" value="false"/>
     <preference name="fullscreen" value="true" />
     <preference name="ios-statusbarstyle" value="black-opaque"/>
@@ -35,12 +35,12 @@
 	<icon gap:platform="ios" height="144" src="img/icons/ios/icon-72@2x.png" width="144" />
 	<icon gap:platform="ios" height="152" src="img/icons/ios/icon-152.png" width="152" />
 	<!-- iOS -->	
-    <gap:splash src="img/icons/ios/Default.png" gap:platform="ios" width="320" height="480"/>
-    <gap:splash src="img/icons/ios/Default@2x.png" gap:platform="ios" width="640" height="960"/>
-    <gap:splash src="img/icons/ios/Default-568h@2x.png" gap:platform="ios" width="640" height="1136"/>
+    <gap:splash gap:platform="ios" src="img/icons/ios/Default.png" width="320" height="480"/>
+    <gap:splash gap:platform="ios" src="img/icons/ios/Default@2x.png" width="640" height="960"/>
+    <gap:splash gap:platform="ios" src="img/icons/ios/Default-568h@2x.png" width="640" height="1136"/>
     <!-- Android -->
-    <icon src="img/icons/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi"/>
-    <icon src="img/icons/android/icon-48-mdpi.png" gap:platform="android" gap:density="mdpi"/>
-    <icon src="img/icons/android/icon-72-hdpi.png" gap:platform="android" gap:density="hdpi"/>
-    <icon src="img/icons/android/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi"/>
+    <icon gap:platform="android" src="img/icons/android/icon-36-ldpi.png" gap:density="ldpi"/>
+    <icon gap:platform="android" src="img/icons/android/icon-48-mdpi.png" gap:density="mdpi"/>
+    <icon gap:platform="android" src="img/icons/android/icon-72-hdpi.png" gap:density="hdpi"/>
+    <icon gap:platform="android" src="img/icons/android/icon-96-xhdpi.png" gap:density="xhdpi"/>
 </widget>
