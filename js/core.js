@@ -15,12 +15,11 @@ $(window).load(function() {
 			return false;
 		}
 	});
-	$('.hyperlink').live('click', function(){
-		var link = $(this).attr('id');
-		myURL = encodeURI(link);
-		window.open(myURL, '_system', 'location=yes');
-		return false;
-	});
+});
+$(document).on('click', '.external', function(e) {
+	e.preventDefault();
+	var targetURL = $(this).attr("href");
+	window.open(targetURL, "_system");
 });
 $(document).ajaxError(function(event, request, settings) {
     $('#busy').hide();
@@ -46,7 +45,7 @@ function getMoreList() {
         $.each(data, function(index, item) {
             $('#moreList').append(
                 '<li class="icon ' + item.icon + '">' +
-				'<a href="#" id="' + item.link + '" class="hyperlink">' +
+				'<a href="' + item.link + '" class="external">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
@@ -65,7 +64,7 @@ function getShareList() {
         $.each(data, function(index, item) {
             $('#shareList').append(
                 '<li class="icon ' + item.icon + '">' +
-				'<a href="#" id="' + item.link + '" class="hyperlink">' +
+				'<a href="' + item.link + '" class="external">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'

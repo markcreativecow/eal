@@ -23,7 +23,7 @@ function getEvent() {
                 '<p><span>Date:</span> ' + moment.unix(item.from).format('Do MMMM YYYY') + '</p>' +
                 '<p><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p>' +
                 '<p><span>Event Description:</span> ' + item.description + '</p></div>' +
-				'<a href="#" id="' + item.link + '" class="btn btn-register hyperlink">Register</a>' +
+				'<a href="' + item.link + '" class="btn btn-register external">Register</a>' +
                 '<div class="clearfix"></div>');
         });
         setTimeout(function(){
