@@ -88,6 +88,7 @@
     text-shadow: 0 -1px 0 rgba(255,255,255,0.8);
     bottom: 5px;
     right: 5px;
+	text-decoration: none;
     text-align: right;
     pointer-events: none;
 }
@@ -105,9 +106,11 @@
     background: radial-gradient(ellipse at center, #0f4884 0%,#07223e 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f4884', endColorstr='#07223e',GradientType=1 );
     box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1);
+	text-decoration: none;
 }
 .fc-calendar .fc-row > div.fc-content > span.fc-date {
     color: #fff;
+	text-decoration: none;
     text-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 .fc-calendar .fc-row > div.fc-today {
@@ -115,7 +118,8 @@
 }
 .fc-calendar .fc-row > div.fc-out {
     opacity: 0.6;
-}.fc-calendar .fc-row > div.fc-content div {
+}
+.fc-calendar .fc-row > div.fc-content div {
     display: none;
 }
 .fc-calendar .fc-row > div:last-child,
