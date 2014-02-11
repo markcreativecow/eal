@@ -17,7 +17,8 @@ $(window).load(function() {
 	});
 	$('.hyperlink').live('click', function(){
 		var link = $(this).attr('id');
-		alert(encodeURI(link));
+		myURL = encodeURI(link);
+		window.open(myURL, '_blank');
 		return false;
 	});
 });
