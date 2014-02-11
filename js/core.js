@@ -15,15 +15,16 @@ $(window).load(function() {
 			return false;
 		}
 	});
+	$('.hyperlink').live('click', function(){
+		var link = $(this).attr('id');
+		alert(encodeURI(link));
+		return false;
+	});
 });
 $(document).ajaxError(function(event, request, settings) {
     $('#busy').hide();
     alert('Error accessing the server');
 });
-function openWindow(target) {
-	alert(target);
-	return false;
-}
 function hideOverlays() {
     $('.overlay').hide();
 }
@@ -44,7 +45,7 @@ function getMoreList() {
         $.each(data, function(index, item) {
             $('#moreList').append(
                 '<li class="icon ' + item.icon + '">' +
-				'<a href="#" ontouchstart="openWindow("' + item.link + '");">' +
+				'<a href="#" id="' + item.link + '" class="hyperlink">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
@@ -63,7 +64,7 @@ function getShareList() {
         $.each(data, function(index, item) {
             $('#shareList').append(
                 '<li class="icon ' + item.icon + '">' +
-				'<a href="#" ontouchstart="openWindow("' + item.link + '");">' +
+				'<a href="#" id="' + item.link + '" class="hyperlink">' +
                 '<h2>' + item.name + '</h2>' +
                 '<div class="clearfix"></div>' +
                 '</a></li>'
