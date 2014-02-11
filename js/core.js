@@ -19,6 +19,7 @@ $(window).load(function() {
 		var link = $(this).attr('id');
 		myURL = encodeURI(link);
 		window.open(myURL, '_system', 'location=yes');
+		return false;
 	});
 });
 $(document).ajaxError(function(event, request, settings) {
