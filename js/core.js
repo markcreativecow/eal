@@ -18,7 +18,7 @@ $(window).load(function() {
 	$('.hyperlink').live('click', function(){
 		var link = $(this).attr('id');
 		myURL = encodeURI(link);
-		window.open(myURL, '_blank');
+		window.open(myURL, '_system');
 		return false;
 	});
 });
