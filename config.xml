@@ -3,10 +3,12 @@
     <name>EAL Events App</name>
     <description></description>
     <author href="https://www.eal.org.uk" email="mnieminen@ontapcommunications.com">On Tap Communications</author>
-    <!-- If you do not want any permissions to be added to your app, add the following tag to your config.xml; you will still have the INTERNET permission on your app, which PhoneGap requires. -->
-    <preference name="permissions" value="none" />
     <!-- to enable individual permissions use the following examples -->
+	<feature name="InAppBrowser"><param name="ios-package" value="CDVInAppBrowser" /></feature>
+	
 	<gap:config-file platform="ios" parent="UIStatusBarHidden"><true/></gap:config-file>
+	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance"><false/></gap:config-file>
+	<gap:config-file platform="ios" parent="CFBundleShortVersionString"><string>12</string></gap:config-file>
     <!--
    	<feature name="http://api.phonegap.com/1.0/battery"/>
    	<feature name="http://api.phonegap.com/1.0/camera"/>
@@ -17,11 +19,14 @@
    	<feature name="http://api.phonegap.com/1.0/network"/>
    	<feature name="http://api.phonegap.com/1.0/notification"/>
     -->
+	<!-- If you do not want any permissions to be added to your app, add the following tag to your config.xml; you will still have the INTERNET permission on your app, which PhoneGap requires. -->
+    <preference name="permissions" value="none" />
+	
     <preference name="detect-data-types" value="false"/>
     <preference name="fullscreen" value="true" />
-    <preference name="ios-statusbarstyle" value="black-opaque"/>
+    <preference name="ios-statusbarstyle" value="default"/>
     <preference name="orientation" value="portrait"/>
-    <preference name="phonegap-version" value="2.9.0" />
+    <preference name="phonegap-version" value="3.3.0" />
     <preference name="prerendered-icon" value="true"/>
     <preference name="webviewbounce" value="false" />
 	<preference name="target-device" value="handset" />
