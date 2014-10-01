@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.eal.app" version="1.2" >
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.eal.app" version="1.3" >
     <name>EAL Events App</name>
     <description></description>
     <author href="https://www.eal.org.uk" email="mnieminen@ontapcommunications.com">On Tap Communications</author>
     	
 	<gap:config-file platform="ios" parent="UIStatusBarHidden"><true/></gap:config-file>
 	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance"><false/></gap:config-file>
-	<gap:config-file platform="ios" parent="CFBundleShortVersionString"><string>12</string></gap:config-file>
+	<gap:config-file platform="ios" parent="CFBundleShortVersionString"><string>13</string></gap:config-file>
     <!--
    	<feature name="http://api.phonegap.com/1.0/battery"/>
    	<feature name="http://api.phonegap.com/1.0/camera"/>
