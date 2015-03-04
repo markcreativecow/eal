@@ -95,7 +95,7 @@ function getEventsList() {
 					'<p class="custom-time"><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p>' +
 					'<p class="custom-description"><span>Event Description:</span> ' + item.description + '</p></div>' +
 					(item.link != '' ? '<a href="' + item.link + '" class="btn btn-register external">Register</a>' : '') +
-					// '<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
+					'<a href="#" onclick="" class="btn" id="btn-remind">Remind Me</a>' +
 					'<div class="clearfix"></div>';
             // If there is already an event on this particular day, append it on
 			if (events[date]) {
