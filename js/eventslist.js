@@ -26,8 +26,8 @@ function getEventsList() {
 					'<p><span>Time:</span> ' + moment.unix(item.from).format('HH:mm') + ' - ' + moment.unix(item.to).format('HH:mm') + '</p>' +
 				'</a></li>');
         });
-		setTimeout(function(){
-			scroll.refresh();
-		}, 500);
     });
+	setTimeout(function(){
+		scroll.refresh();
+	});
 }

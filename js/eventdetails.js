@@ -26,10 +26,10 @@ function getEvent() {
 				(item.link != '' ? '<a href="' + item.link + '" class="btn btn-register external">Register</a>' : '') +
                 '<div class="clearfix"></div>');
         });
-		setTimeout(function(){
-			scroll.refresh();
-		}, 500);
     });
+	setTimeout(function(){
+		scroll.refresh();
+	});
 }
 function getUrlVars() {
     var vars = [], hash;
