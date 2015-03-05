@@ -28,6 +28,6 @@ function getEventsList() {
         });
 		setTimeout(function(){
 			scroll.refresh();
-		});
+		}, 500);
     });
 }
