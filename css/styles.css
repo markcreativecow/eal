@@ -23,28 +23,28 @@ body {
 /**********
  * HEADER *
  **********/
-#logo {
-    float: left;
-    margin: 16px 0 0 20px;
-    width: 130px;
-}
-#logo a {
-    display: block;
-}
-#logo a img {
-    display: block;
-    height: auto;
-    width: 100%;
-}
 #title {
-    float: right;
-    margin: 8px 20px 0 0;
+    float: left;
+    margin: 8px 0 0 20px;
     width: 130px;
 }
 #title a {
     display: block;
 }
 #title a img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+#logo {
+    float: right;
+    margin: 8px 0 0 20px;
+    width: 130px;
+}
+#logo a {
+    display: block;
+}
+#logo a img {
     display: block;
     height: auto;
     width: 100%;
